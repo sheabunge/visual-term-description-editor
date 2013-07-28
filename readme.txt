@@ -24,6 +24,12 @@ This plugin's code is [available on GitHub](https://github.com/bungeshea/visual-
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Done!
 
+== Screenshots ==
+
+1. Adding a new tag using the visual editor
+2. Editing a tag using the visual editor
+3. Viewing a tag archive page with the formatted tag description (using the Twenty Twelve theme)
+
 == Changelog ==
 
 = 1.0 =
