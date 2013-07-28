@@ -12,7 +12,7 @@ Replaces the plain-text category and tag description editor with a visual editor
 
 == Description ==
 
-Replaces the term description editor with the WordPress TinyMCE visual editor, allowing you to use HTML in term descriptions and write them in rich text.
+Replaces the term description editor with the WordPress TinyMCE visual editor, allowing you to use HTML in term descriptions and write them in rich text. Works on all taxonomies, including tags, categories and link categories, as well as custom taxonomies.
 
 This plugin is multisite-compatible; if you would like to use it on every blog, network activate the plugin from the network dashboard. Otherwise, activate the plugin for individual sites.
 
