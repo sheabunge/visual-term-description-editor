@@ -23,7 +23,7 @@ class Visual_Term_Description_Editor {
 	 * @since 1.0
 	 * @var   array
 	 */
-	public $taxomonies;
+	public $taxonomies ;
 
 	/**
 	 * The constructor function for the class
@@ -33,14 +33,14 @@ class Visual_Term_Description_Editor {
 	 * @param  array $taxonomies The taxonomies which should use a visual editor
 	 * @return void
 	 */
-	public function __construct( $taxomonies ) {
+	public function __construct( $taxonomies ) {
 
 		/* Only users with the "unfiltered_html" capability can use this feature */
 		if ( ! current_user_can( 'unfiltered_html' ) )
 			return;
 
 		/* Setup the class variables */
-		$this->taxomonies = (array) $taxomonies;
+		$this->taxonomies = (array) $taxonomies;
 
 		/* Remove the filters which disallow HTML in term descriptions */
 		remove_filter( 'pre_term_description', 'wp_filter_kses' );
