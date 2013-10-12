@@ -142,3 +142,16 @@ function visual_term_description_editor() {
 	$GLOBALS['visual-term-description-editor'] = new Visual_Term_Description_Editor( $taxonomies );
 }
 add_action( 'init', 'visual_term_description_editor' );
+
+/**
+ * Fix the formatting buttons on the HTML section of
+ * the visual editor from being full-width
+ *
+ * @since  1.0.1
+ * @return void
+ */
+function fix_visual_term_description_editor_style() {
+	echo '<style>.quicktags-toolbar input { width: auto; }</style>';
+}
+
+add_action( 'admin_head-edit-tags.php', 'fix_visual_term_description_editor_style' );
