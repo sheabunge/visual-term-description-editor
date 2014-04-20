@@ -31,3 +31,4 @@ module.exports = function(grunt) {
 
 	grunt.registerTask( 'default', ['clean:build', 'copy:build'] );
 	grunt.registerTask( 'deploy', ['default', 'wp_deploy'] );
+};
