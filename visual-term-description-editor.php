@@ -8,7 +8,7 @@
  * Author URI:  http://bungeshea.com
  * License:     MIT
  * License URI: http://opensource.com/licences/MIT
- * Version:     1.0
+ * Version:     1.1
  */
 
 /* Exit if accessed directly */
@@ -69,7 +69,6 @@ class Visual_Term_Description_Editor {
 			'textarea_name' => 'description',
 			'quicktags'     => true,
 			'tinymce'       => true,
-			'editor_css'    => '<style>#wp-html-description-editor-container .wp-editor-area { height: 250px; }</style>'
 		);
 
 		?>
@@ -100,7 +99,6 @@ class Visual_Term_Description_Editor {
 			'textarea_name'=> 'description',
 			'quicktags'    => true,
 			'tinymce'      => true,
-			'editor_css'   => '<style>#wp-html-tag-description-editor-container .wp-editor-area { height: 150px; }</style>'
 		);
 
 		?>
@@ -147,7 +145,7 @@ add_action( 'init', 'visual_term_description_editor' );
  * Fix the formatting buttons on the HTML section of
  * the visual editor from being full-width
  *
- * @since  1.0.1
+ * @since  1.1
  * @return void
  */
 function fix_visual_term_description_editor_style() {
