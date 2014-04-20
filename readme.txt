@@ -3,7 +3,7 @@ Contributors: bungeshea
 Donate link: http://bungeshea.com/donate/
 Tags: tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
-Tested up to: 3.6
+Tested up to: 3.9
 Stable tag: 1.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
