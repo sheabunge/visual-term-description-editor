@@ -12,8 +12,9 @@
  */
 
 /* Exit if accessed directly */
-if ( ! defined( 'ABSPATH' ) )
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
+}
 
 class Visual_Term_Description_Editor {
 
