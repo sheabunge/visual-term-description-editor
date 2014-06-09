@@ -23,5 +23,5 @@ This plugin is multisite-compatible; if you would like to use it on every blog, 
 ### Editing a tag using the visual editor
 ![Editing a tag using the visual editor](screenshot-2.png)
 
-### Viewing a tag archive page with the formatted tag description (using the Twenty Twelve theme)
-![Viewing a tag archive page with the formatted tag description (using the Twenty Twelve theme)](screenshot-3.png)
+### Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)
+![Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)](screenshot-3.png)

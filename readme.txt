@@ -28,13 +28,14 @@ This plugin's code is [available on GitHub](https://github.com/bungeshea/visual-
 
 1. Adding a new tag using the visual editor
 2. Editing a tag using the visual editor
-3. Viewing a tag archive page with the formatted tag description (using the Twenty Twelve theme)
+3. Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)
 
 == Changelog ==
 
 = 1.1 =
 * Fix text (HTML) editor buttons from displaying full width
 * Stripped down add term editor
+* Updated screenshots for WordPress 3.9
 
 = 1.0 =
 * Initial release
