@@ -66,10 +66,8 @@ class Visual_Term_Description_Editor {
 	public function render_field_edit( $tag, $taxonomy ) {
 
 		$settings = array(
-			'quicktags'     => array( 'buttons' => 'em,strong,link' ),
 			'textarea_name' => 'description',
-			'quicktags'     => true,
-			'tinymce'       => true,
+			'textarea_rows' => 10,
 		);
 
 		?>
@@ -96,10 +94,10 @@ class Visual_Term_Description_Editor {
 	public function render_field_add( $taxonomy ) {
 
 		$settings = array(
-			'quicktags'    => array( 'buttons' => 'em,strong,link' ),
-			'textarea_name'=> 'description',
-			'quicktags'    => true,
-			'tinymce'      => true,
+			'textarea_name' => 'description',
+			'textarea_rows' => 7,
+			'teeny'         => true,
+			'media_buttons' => false,
 		);
 
 		?>
@@ -114,9 +112,9 @@ class Visual_Term_Description_Editor {
 				jQuery(function() {
 					// Trigger save
 					jQuery( '#addtag' ).on( 'mousedown', '#submit', function() {
-				   		tinyMCE.triggerSave();
-				    });
-			    });
+							tinyMCE.triggerSave();
+						});
+					});
 
 			</script>
 		</div>

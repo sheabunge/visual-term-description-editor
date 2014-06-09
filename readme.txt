@@ -34,6 +34,7 @@ This plugin's code is [available on GitHub](https://github.com/bungeshea/visual-
 
 = 1.1 =
 * Fix text (HTML) editor buttons from displaying full width
+* Stripped down add term editor
 
 = 1.0 =
 * Initial release
