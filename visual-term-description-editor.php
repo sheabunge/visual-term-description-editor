@@ -8,7 +8,7 @@
  * Author URI:  http://bungeshea.com
  * License:     MIT
  * License URI: http://opensource.com/licences/MIT
- * Version:     1.1
+ * Version:     1.1.1
  */
 
 /* Exit if accessed directly */
@@ -24,7 +24,7 @@ class Visual_Term_Description_Editor {
 	 * @since 1.0
 	 * @var   array
 	 */
-	public $taxonomies ;
+	public $taxonomies;
 
 	/**
 	 * The constructor function for the class

@@ -4,7 +4,7 @@ Donate link: http://bungeshea.com/donate/
 Tags: tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -31,6 +31,9 @@ This plugin's code is [available on GitHub](https://github.com/bungeshea/visual-
 3. Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)
 
 == Changelog ==
+
+= 1.1.1 =
+* Load plugin as late as possible to ensure all custom taxonomies are registered
 
 = 1.1 =
 * Fix text (HTML) editor buttons from displaying full width
