@@ -138,7 +138,7 @@ function visual_term_description_editor() {
 	/* Initialize the class */
 	$GLOBALS['visual-term-description-editor'] = new Visual_Term_Description_Editor( $taxonomies );
 }
-add_action( 'init', 'visual_term_description_editor' );
+add_action( 'wp_loaded', 'visual_term_description_editor', 999 );
 
 /**
  * Fix the formatting buttons on the HTML section of
