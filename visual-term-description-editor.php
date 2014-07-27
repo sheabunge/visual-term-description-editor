@@ -47,6 +47,12 @@ class Visual_Term_Description_Editor {
 		remove_filter( 'pre_term_description', 'wp_filter_kses' );
 		remove_filter( 'term_description', 'wp_kses_data' );
 
+		/* Evaluate shortcodes */
+		add_filter( 'term_description', 'do_shortcode' );
+
+		/* Convert smilies */
+		add_filter( 'term_description', 'convert_smilies' );
+
 		/* Loop through the taxonomies, adding actions */
 		foreach ( $this->taxonomies as $taxonomy ) {
 			add_action( $taxonomy . '_edit_form_fields', array( $this, 'render_field_edit' ), 1, 2 );
