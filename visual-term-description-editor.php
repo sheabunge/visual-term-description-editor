@@ -102,8 +102,6 @@ class Visual_Term_Description_Editor {
 		$settings = array(
 			'textarea_name' => 'description',
 			'textarea_rows' => 7,
-			'teeny'         => true,
-			'media_buttons' => false,
 		);
 
 		?>
