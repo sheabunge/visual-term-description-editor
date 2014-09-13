@@ -8,7 +8,7 @@
  * Author URI:  http://bungeshea.com
  * License:     MIT
  * License URI: http://opensource.com/licences/MIT
- * Version:     1.2
+ * Version:     1.3
  */
 
 /* Exit if accessed directly */
@@ -49,8 +49,10 @@ class Visual_Term_Description_Editor {
 		remove_filter( 'term_description', 'wp_kses_data' );
 
 		/* Add filters to disallow unsafe HTML tags */
-		add_filter( 'pre_term_description', 'wp_kses_post' );
-		add_filter( 'term_description', 'wp_kses_post' );
+		if ( ! current_user_can( 'unfiltered_html ' ) ) {
+			add_filter( 'pre_term_description', 'wp_kses_post' );
+			add_filter( 'term_description', 'wp_kses_post' );
+		}
 
 		/* Evaluate shortcodes */
 		add_filter( 'term_description', 'do_shortcode' );
