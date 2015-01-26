@@ -36,22 +36,21 @@ class Visual_Term_Description_Editor {
 	 */
 	public function __construct( $taxonomies ) {
 
-		/* Only users with the "publish_posts" capability can use this feature */
-		if ( ! current_user_can( 'publish_posts' ) ) {
-			return;
-		}
-
 		/* Setup the class variables */
 		$this->taxonomies = (array) $taxonomies;
 
-		/* Remove the filters which disallow HTML in term descriptions */
-		remove_filter( 'pre_term_description', 'wp_filter_kses' );
-		remove_filter( 'term_description', 'wp_kses_data' );
+		/* Only users with the "publish_posts" capability can use this feature */
+		if ( current_user_can( 'publish_posts' ) ) {
 
-		/* Add filters to disallow unsafe HTML tags */
-		if ( ! current_user_can( 'unfiltered_html ' ) ) {
-			add_filter( 'pre_term_description', 'wp_kses_post' );
-			add_filter( 'term_description', 'wp_kses_post' );
+			/* Remove the filters which disallow HTML in term descriptions */
+			remove_filter( 'pre_term_description', 'wp_filter_kses' );
+			remove_filter( 'term_description', 'wp_kses_data' );
+
+			/* Add filters to disallow unsafe HTML tags */
+			if ( ! current_user_can( 'unfiltered_html ' ) ) {
+				add_filter( 'pre_term_description', 'wp_kses_post' );
+				add_filter( 'term_description', 'wp_kses_post' );
+			}
 		}
 
 		/* Evaluate shortcodes */
