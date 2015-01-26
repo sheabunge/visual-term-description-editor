@@ -8,7 +8,7 @@
  * Author URI:  http://bungeshea.com
  * License:     MIT
  * License URI: http://opensource.com/licences/MIT
- * Version:     1.3
+ * Version:     1.3.1
  */
 
 /* Exit if accessed directly */
