@@ -37,7 +37,7 @@ class Visual_Term_Description_Editor {
 	public function __construct( $taxonomies ) {
 
 		/* Setup the class variables */
-		$this->taxonomies = (array) $taxonomies;
+		$this->taxonomies = apply_filters( 'visual_term_description_taxonomies' , (array) $taxonomies );
 
 		/* Only users with the "publish_posts" capability can use this feature */
 		if ( current_user_can( 'publish_posts' ) ) {
