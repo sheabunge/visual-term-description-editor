@@ -37,7 +37,7 @@ class Visual_Term_Description_Editor {
 	public function __construct( $taxonomies ) {
 
 		/* Setup the class variables */
-		$this->taxonomies = apply_filters( 'visual_term_description_taxonomies' , (array) $taxonomies );
+		$this->taxonomies = (array) $taxonomies;
 
 		/* Only users with the "publish_posts" capability can use this feature */
 		if ( current_user_can( 'publish_posts' ) ) {
@@ -48,16 +48,25 @@ class Visual_Term_Description_Editor {
 
 			/* Add filters to disallow unsafe HTML tags */
 			if ( ! current_user_can( 'unfiltered_html ' ) ) {
-				add_filter( 'pre_term_description', 'wp_kses_post' );
-				add_filter( 'term_description', 'wp_kses_post' );
+
+				add_filter( 'pre_term_description', 'wptexturize'        );
+				add_filter( 'pre_term_description', 'convert_smilies'    );
+				add_filter( 'pre_term_description', 'convert_chars'      );
+				add_filter( 'pre_term_description', 'wpautop'            );
+				add_filter( 'pre_term_description', 'shortcode_unautop'  );
+				add_filter( 'pre_term_description', 'prepend_attachment' );
+				add_filter( 'pre_term_description', 'do_shortcode', 11 );
+
+				add_filter( 'term_description', 'wptexturize'        );
+				add_filter( 'term_description', 'convert_smilies'    );
+				add_filter( 'term_description', 'convert_chars'      );
+				add_filter( 'term_description', 'wpautop'            );
+				add_filter( 'term_description', 'shortcode_unautop'  );
+				add_filter( 'term_description', 'prepend_attachment' );
+				add_filter( 'term_description', 'do_shortcode', 11 );
+
 			}
 		}
-
-		/* Evaluate shortcodes */
-		add_filter( 'term_description', 'do_shortcode' );
-
-		/* Convert smilies */
-		add_filter( 'term_description', 'convert_smilies' );
 
 		/* Loop through the taxonomies, adding actions */
 		foreach ( $this->taxonomies as $taxonomy ) {
