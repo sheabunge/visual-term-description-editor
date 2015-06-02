@@ -16,28 +16,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Implement a visual editor for term descriptions
+ *
+ * @since 1.0
+ */
 class Visual_Term_Description_Editor {
 
 	/**
 	 * The taxonomies which should use the visual editor
 	 *
+	 * @var array
 	 * @since 1.0
-	 * @var   array
 	 */
 	public $taxonomies;
 
 	/**
 	 * The constructor function for the class
 	 *
-	 * @since  1.0
-	 * @access public
-	 * @param  array $taxonomies The taxonomies which should use a visual editor
-	 * @return void
+	 * @since 1.0
+	 *
+	 * @param array $taxonomies The taxonomies which should use a visual editor
 	 */
-	public function __construct( $taxonomies ) {
+	public function __construct( array $taxonomies ) {
 
 		/* Setup the class variables */
-		$this->taxonomies = (array) $taxonomies;
+		$this->taxonomies = $taxonomies;
 
 		/* Only users with the "publish_posts" capability can use this feature */
 		if ( current_user_can( 'publish_posts' ) ) {
@@ -79,10 +83,9 @@ class Visual_Term_Description_Editor {
 	 * Add the visual editor to the edit tag screen
 	 *
 	 * @since  1.0
-	 * @access public
-	 * @param  object $tag      The tag currently being edited
-	 * @param  string $taxonomy The taxonomy that the tag belongs to
-	 * @return void
+
+	 * @param object $tag      The tag currently being edited
+	 * @param string $taxonomy The taxonomy that the tag belongs to
 	 */
 	public function render_field_edit( $tag, $taxonomy ) {
 
@@ -107,10 +110,9 @@ class Visual_Term_Description_Editor {
 	/**
 	 * Add the visual editor to the add new tag screen
 	 *
-	 * @since  1.0
-	 * @access public
-	 * @param  string $taxonomy The taxonomy that a new tag is being added to
-	 * @return void
+	 * @since 1.0
+	 *
+	 * @param string $taxonomy The taxonomy that a new tag is being added to
 	 */
 	public function render_field_add( $taxonomy ) {
 
@@ -145,18 +147,18 @@ class Visual_Term_Description_Editor {
 /**
  * Instantiates the class to work on all of the registered taxonomies
  *
- * @since  1.0
- * @access public
- * @return void
+ * @since 1.0
  */
 function visual_term_description_editor() {
 
 	/* Retrieve an array of registered taxonomies */
 	$taxonomies = get_taxonomies( '', 'names' );
+	$taxonomies = apply_filters( 'visual_term_description_taxonomies', $taxonomies );
 
 	/* Initialize the class */
-	$GLOBALS['visual-term-description-editor'] = new Visual_Term_Description_Editor( $taxonomies );
+	do_action( 'visual_term_description_editor', new Visual_Term_Description_Editor( $taxonomies ) );
 }
+
 add_action( 'wp_loaded', 'visual_term_description_editor', 999 );
 
 /**
@@ -164,7 +166,6 @@ add_action( 'wp_loaded', 'visual_term_description_editor', 999 );
  * the visual editor from being full-width
  *
  * @since  1.1
- * @return void
  */
 function fix_visual_term_description_editor_style() {
 	echo '<style>.quicktags-toolbar input { width: auto; }</style>';
