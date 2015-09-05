@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Visual Term Description Editor
- * Plugin URI:  https://github.com/bungeshea/visual-term-description-editor
+ * Plugin URI:  https://github.com/sheabunge/visual-term-description-editor
  * Description: Replaces the plain-text term (category, tag) description editor with a WYSIWYG visual editor
  * Author:      Shea Bunge
  * Author URI:  http://bungeshea.com
@@ -42,6 +42,14 @@ class Visual_Term_Description_Editor {
 
 		/* Setup the class variables */
 		$this->taxonomies = $taxonomies;
+	}
+
+	/**
+	 * Register actions and filters
+	 *
+	 * @since 1.4.0
+	 */
+	public function run() {
 
 		/* Only users with the "publish_posts" capability can use this feature */
 		if ( current_user_can( 'publish_posts' ) ) {
@@ -57,6 +65,7 @@ class Visual_Term_Description_Editor {
 			}
 		}
 
+		/* Apply `the_content` filters to term description */
 		if ( isset( $GLOBALS['wp_embed'] ) ) {
 			add_filter( 'term_description', array( $GLOBALS['wp_embed'], 'run_shortcode' ), 8 );
 			add_filter( 'term_description', array( $GLOBALS['wp_embed'], 'autoembed' ), 8 );
@@ -76,11 +85,10 @@ class Visual_Term_Description_Editor {
 		}
 	}
 
-
 	/**
 	 * Add the visual editor to the edit tag screen
 	 *
-	 * @since  1.0
+	 * @since 1.0
 	 *
 	 * @param object $tag      The tag currently being edited
 	 * @param string $taxonomy The taxonomy that the tag belongs to
@@ -154,7 +162,11 @@ function visual_term_description_editor() {
 	$taxonomies = apply_filters( 'visual_term_description_taxonomies', $taxonomies );
 
 	/* Initialize the class */
-	do_action( 'visual_term_description_editor', new Visual_Term_Description_Editor( $taxonomies ) );
+	$plugin = new Visual_Term_Description_Editor( $taxonomies );
+	$plugin->run();
+
+	/* Make class accessible to other plugins */
+	add_filter( 'visual_term_description_editor', $plugin );
 }
 
 add_action( 'wp_loaded', 'visual_term_description_editor', 999 );
