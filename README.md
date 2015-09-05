@@ -2,7 +2,7 @@
 
 * __Requires at least:__ WordPress 3.3 or later
 * __Tested up to:__ WordPress 4.3
-* __Stable version:__ 1.4.0
+* __Stable version:__ 1.4.1
 * __License:__ [MIT](http://opensource.org/licenses/MIT)
 
 Replaces the term description editor with the WordPress TinyMCE visual editor, allowing you to use HTML in term descriptions and write them in rich text. Works on all taxonomies, including tags, categories and link categories, as well as custom taxonomies.
