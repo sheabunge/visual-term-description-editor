@@ -51,26 +51,23 @@ class Visual_Term_Description_Editor {
 			remove_filter( 'term_description', 'wp_kses_data' );
 
 			/* Add filters to disallow unsafe HTML tags */
-			if ( ! current_user_can( 'unfiltered_html ' ) ) {
-
-				add_filter( 'pre_term_description', 'wptexturize'        );
-				add_filter( 'pre_term_description', 'convert_smilies'    );
-				add_filter( 'pre_term_description', 'convert_chars'      );
-				add_filter( 'pre_term_description', 'wpautop'            );
-				add_filter( 'pre_term_description', 'shortcode_unautop'  );
-				add_filter( 'pre_term_description', 'prepend_attachment' );
-				add_filter( 'pre_term_description', 'do_shortcode', 11 );
-
-				add_filter( 'term_description', 'wptexturize'        );
-				add_filter( 'term_description', 'convert_smilies'    );
-				add_filter( 'term_description', 'convert_chars'      );
-				add_filter( 'term_description', 'wpautop'            );
-				add_filter( 'term_description', 'shortcode_unautop'  );
-				add_filter( 'term_description', 'prepend_attachment' );
-				add_filter( 'term_description', 'do_shortcode', 11 );
-
+			if ( ! current_user_can( 'unfiltered_html' ) ) {
+				add_filter( 'pre_term_description', 'wp_kses_post' );
+				add_filter( 'term_description', 'wp_kses_post' );
 			}
 		}
+
+		if ( isset( $GLOBALS['wp_embed'] ) ) {
+			add_filter( 'term_description', array( $GLOBALS['wp_embed'], 'run_shortcode' ), 8 );
+			add_filter( 'term_description', array( $GLOBALS['wp_embed'], 'autoembed' ), 8 );
+		}
+
+		add_filter( 'term_description', 'wptexturize' );
+		add_filter( 'term_description', 'convert_smilies' );
+		add_filter( 'term_description', 'convert_chars' );
+		add_filter( 'term_description', 'wpautop' );
+		add_filter( 'term_description', 'shortcode_unautop' );
+		add_filter( 'term_description', 'do_shortcode', 11);
 
 		/* Loop through the taxonomies, adding actions */
 		foreach ( $this->taxonomies as $taxonomy ) {
@@ -79,11 +76,12 @@ class Visual_Term_Description_Editor {
 		}
 	}
 
+
 	/**
 	 * Add the visual editor to the edit tag screen
 	 *
 	 * @since  1.0
-
+	 *
 	 * @param object $tag      The tag currently being edited
 	 * @param string $taxonomy The taxonomy that the tag belongs to
 	 */
@@ -165,7 +163,7 @@ add_action( 'wp_loaded', 'visual_term_description_editor', 999 );
  * Fix the formatting buttons on the HTML section of
  * the visual editor from being full-width
  *
- * @since  1.1
+ * @since 1.1
  */
 function fix_visual_term_description_editor_style() {
 	echo '<style>.quicktags-toolbar input { width: auto; }</style>';
