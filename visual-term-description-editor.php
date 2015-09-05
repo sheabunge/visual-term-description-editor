@@ -101,10 +101,10 @@ class Visual_Term_Description_Editor {
 		);
 
 		?>
-		<tr class="form-field">
+		<tr class="form-field term-description-wrap">
 			<th scope="row" valign="top"><label for="description"><?php _ex( 'Description', 'Taxonomy Description' ); ?></label></th>
 			<td><?php wp_editor( htmlspecialchars_decode( $tag->description ), 'html-description', $settings ); ?>
-			<span class="description"><?php _e( 'The description is not prominent by default, however some themes may show it.' ); ?></span></td>
+			<p class="description"><?php _e( 'The description is not prominent by default, however some themes may show it.' ); ?></p></td>
 			<script type="text/javascript">
 				// Remove the non-html field
 				jQuery( 'textarea#description' ).closest( '.form-field' ).remove();
@@ -128,10 +128,11 @@ class Visual_Term_Description_Editor {
 		);
 
 		?>
-		<div>
+		<div class="form-field term-description-wrap">
 			<label for="tag-description"><?php _ex( 'Description', 'Taxonomy Description' ); ?></label>
 			<?php wp_editor( '', 'html-tag-description', $settings ); ?>
-			<p class="description"><?php _e( 'The description is not prominent by default, however some themes may show it.' ); ?></p>
+			<p><?php _e( 'The description is not prominent by default, however some themes may show it.' ); ?></p>
+
 			<script type="text/javascript">
 				// Remove the non-html field
 				jQuery( 'textarea#tag-description' ).closest( '.form-field' ).remove();
