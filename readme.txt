@@ -3,8 +3,8 @@ Contributors: bungeshea
 Donate link: http://bungeshea.com/donate/
 Tags: tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
-Tested up to: 4.1
-Stable tag: 1.3.1
+Tested up to: 4.3
+Stable tag: 1.4.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -16,7 +16,7 @@ Replaces the term description editor with the WordPress TinyMCE visual editor, a
 
 This plugin is multisite-compatible; if you would like to use it on every blog, network activate the plugin from the network dashboard. Otherwise, activate the plugin for individual sites.
 
-This plugin's code is [available on GitHub](https://github.com/bungeshea/visual-term-description-editor). Please feel free to fork the repository and send a pull request. If you find a bug in the plugin, open an issue.
+This plugin's code is [available on GitHub](https://github.com/sheabunge/visual-term-description-editor). Please feel free to fork the repository and send a pull request. If you find a bug in the plugin, open an issue.
 
 == Installation ==
 
@@ -31,6 +31,10 @@ This plugin's code is [available on GitHub](https://github.com/bungeshea/visual-
 3. Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)
 
 == Changelog ==
+
+= 1.4.0 =
+* Add `visual_term_description_taxonomies` filter
+* Add support for oEmbed in term description
 
 = 1.3 =
 * Add visual editor for administrators without the `unfiltered_html` cap [[#](https://wordpress.org/support/topic/multisite-user-issues?replies=6#post-4820263)]
