@@ -1,0 +1,20 @@
+{
+    "name": "sheabunge/visual-term-description-editor",
+    "description": "Replaces the plain-text editor for WordPress taxomonies with a visual WYSIWYG editor",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shea Bunge",
+            "email": "info@bungeshea.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.0",
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "classmap": ["php/"]
+    }
+}
+
