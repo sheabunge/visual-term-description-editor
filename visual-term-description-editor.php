@@ -9,6 +9,8 @@
  * License:     MIT
  * License URI: http://opensource.com/licences/MIT
  * Version:     1.4.1
+ * Text Domain: visual-term-description-editor
+ * Domain Path: /languages
  */
 
 namespace VTDE;

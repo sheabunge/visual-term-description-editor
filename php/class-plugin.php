@@ -1,16 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shea
- * Date: 16/12/15
- * Time: 12:14 PM
- */
 
 namespace VTDE;
 
-
+/**
+ * Base plugin class
+ * @package VTDE
+ */
 class Plugin {
 
+	/**
+	 * @var Editor
+	 */
 	public $editor;
 
 	/**
@@ -19,7 +19,7 @@ class Plugin {
 	 * @since 1.0
 	 */
 	function run() {
-
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 		add_action( 'admin_head-edit-tags.php', 'fix_visual_term_description_editor_style' );
 
 		/* Retrieve an array of registered taxonomies */
@@ -39,5 +39,20 @@ class Plugin {
 	 */
 	function fix_visual_term_description_editor_style() {
 		echo '<style>.quicktags-toolbar input { width: auto; }</style>';
+	}
+
+	/**
+	 * Load up the localization file if we're using WordPress in a different language
+	 */
+	public function load_textdomain() {
+		$domain = 'visual-term-description-editor';
+		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+
+		// wp-content/languages/visual-term-description-editor/visual-term-description-editor-[locale].mo
+		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . "$domain/$domain-$locale.mo" );
+
+		// wp-content/plugins/visual-term-description-editor/languages/visual-term-description-editor-[locale].mo
+		$basename = plugin_basename( dirname( __DIR__ ) );
+		load_plugin_textdomain( $domain, false, $basename . '/languages' );
 	}
 }
