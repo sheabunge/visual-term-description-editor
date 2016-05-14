@@ -3,8 +3,8 @@ Contributors: bungeshea
 Donate link: http://bungeshea.com/donate/
 Tags: tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
-Tested up to: 4.4
-Stable tag: 1.4.1
+Tested up to: 4.5.2
+Stable tag: 1.4.2
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -31,6 +31,9 @@ This plugin's code is [available on GitHub](https://github.com/sheabunge/visual-
 3. Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)
 
 == Changelog ==
+
+= 1.4.2 =
+* Update field HTML to match what is used in WordPress 4.5
 
 = 1.4.1 =
 * Update HTML elements and class names to match latest version of WordPress (props to [@ThatStevensGuy](https://github.com/ThatStevensGuy))
