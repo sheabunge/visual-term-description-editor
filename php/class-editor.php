@@ -74,6 +74,8 @@ class Editor {
 	/**
 	 * Add the visual editor to the edit tag screen
 	 *
+	 * HTML should match what is used in wp-admin/edit-tag-form.php
+	 *
 	 * @since 1.0
 	 *
 	 * @param object $tag      The tag currently being edited
@@ -88,9 +90,9 @@ class Editor {
 
 		?>
 		<tr class="form-field term-description-wrap">
-			<th scope="row" valign="top"><label for="description"><?php _ex( 'Description', 'Taxonomy Description' ); ?></label></th>
+			<th scope="row"><label for="description"><?php _e( 'Description' ); ?></label></th>
 			<td><?php wp_editor( htmlspecialchars_decode( $tag->description ), 'html-description', $settings ); ?>
-				<p class="description"><?php _e( 'The description is not prominent by default, however some themes may show it.' ); ?></p></td>
+				<p class="description"><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></p></td>
 			<script type="text/javascript">
 				// Remove the non-html field
 				jQuery( 'textarea#description' ).closest( '.form-field' ).remove();
@@ -101,6 +103,8 @@ class Editor {
 
 	/**
 	 * Add the visual editor to the add new tag screen
+	 *
+	 * HTML should match what is used in wp-admin/edit-tags.php
 	 *
 	 * @since 1.0
 	 *
@@ -115,9 +119,9 @@ class Editor {
 
 		?>
 		<div class="form-field term-description-wrap">
-			<label for="tag-description"><?php _ex( 'Description', 'Taxonomy Description' ); ?></label>
+			<label for="tag-description"><?php _e( 'Description' ); ?></label>
 			<?php wp_editor( '', 'html-tag-description', $settings ); ?>
-			<p><?php _e( 'The description is not prominent by default, however some themes may show it.' ); ?></p>
+			<p><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></p>
 
 			<script type="text/javascript">
 				// Remove the non-html field
