@@ -5,34 +5,27 @@
  * Plugin URI:  https://github.com/sheabunge/visual-term-description-editor
  * Description: Replaces the plain-text term (category, tag) description editor with a WYSIWYG visual editor
  * Author:      Shea Bunge
- * Author URI:  http://bungeshea.com
+ * Author URI:  https://bungeshea.com
  * License:     MIT
- * License URI: http://opensource.com/licences/MIT
+ * License URI: https://opensource.com/licences/MIT
  * Version:     1.4.2
  * Text Domain: visual-term-description-editor
  * Domain Path: /languages
  */
 
-namespace VTDE;
-
-/* Exit if accessed directly */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if ( version_compare( PHP_VERSION, '5.3.0', '>=' ) ) {
+	require dirname( __FILE__ ) . '/load-plugin.php';
+	return;
 }
 
-require __DIR__ . '/vendor/autoload.php';
 
-/**
- * @return Plugin
- */
-function plugin() {
-	static $plugin;
+function vtde_php_upgrade_notice() {
+	echo '<div class="error fade">',
+		'<p><strong>', __( 'Visual Term Description Editor requires PHP 5.3 or later!', 'visual-term-description-editor' ), '</strong></p>',
+		'<p>', __( ' Please upgrade your server to the latest version of PHP – contact your web host if you are unsure about how to do this.', 'visual-term-description-editor' ),  '</p>',
+	'</div>';
 
-	if ( is_null( $plugin ) ) {
-		$plugin = new Plugin( __FILE__ );
-	}
-
-	return $plugin;
+	deactivate_plugins( plugin_basename( __FILE__ ) );
 }
 
-add_action( 'wp_loaded', array( plugin(), 'run' ), 999 );
+add_action( 'admin_notices', 'vtde_php_upgrade_notice' );
