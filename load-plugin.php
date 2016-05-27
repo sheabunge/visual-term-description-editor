@@ -2,6 +2,10 @@
 
 namespace VTDE;
 
+/**
+ * This file handles the actual loading of the plugin
+ */
+
 /* Exit if accessed directly */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

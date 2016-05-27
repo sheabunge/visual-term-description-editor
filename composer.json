@@ -1,6 +1,6 @@
 {
     "name": "sheabunge/visual-term-description-editor",
-    "description": "Replaces the plain-text editor for WordPress taxomonies with a visual WYSIWYG editor",
+    "description": "Replaces the plain-text editor for WordPress taxonomies with a visual WYSIWYG editor",
     "type": "wordpress-plugin",
     "license": "MIT",
     "authors": [
