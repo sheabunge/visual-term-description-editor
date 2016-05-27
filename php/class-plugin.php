@@ -14,6 +14,20 @@ class Plugin {
 	public $editor;
 
 	/**
+	 * @var string
+	 */
+	public $file;
+
+	/**
+	 * Plugin constructor.
+	 *
+	 * @param $file
+	 */
+	function __construct( $file ) {
+		$this->file = $file;
+	}
+
+	/**
 	 * Instantiates the class to work on all of the registered taxonomies
 	 *
 	 * @since 1.0
@@ -38,6 +52,13 @@ class Plugin {
 	 * @since 1.1
 	 */
 	function fix_editor_style() {
+
+		wp_enqueue_script(
+			'vtde-word-count',
+			plugins_url( 'js/wordcount.js', plugin()->file ),
+			array( 'jquery', 'word-count' )
+		);
+
 		echo '<style>.quicktags-toolbar input { width: auto; }</style>';
 	}
 

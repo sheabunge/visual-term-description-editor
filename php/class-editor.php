@@ -71,6 +71,20 @@ class Editor {
 		}
 	}
 
+	private function editor_word_count() {
+
+		?>
+		<div id="post-status-info">
+			<div id="description-word-count" class="hide-if-no-js">
+				<?php printf(
+					__( 'Word count: %s' ),
+					'<span class="word-count">0</span>'
+				); ?>
+			</div>
+		</div>
+		<?php
+	}
+
 	/**
 	 * Add the visual editor to the edit tag screen
 	 *
@@ -91,8 +105,15 @@ class Editor {
 		?>
 		<tr class="form-field term-description-wrap">
 			<th scope="row"><label for="description"><?php _e( 'Description' ); ?></label></th>
-			<td><?php wp_editor( htmlspecialchars_decode( $tag->description ), 'html-description', $settings ); ?>
-				<p class="description"><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></p></td>
+			<td>
+				<?php
+
+				wp_editor( htmlspecialchars_decode( $tag->description ), 'html-description', $settings );
+				$this->editor_word_count();
+
+				?>
+				<p class="description"><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></p>
+			</td>
 			<script type="text/javascript">
 				// Remove the non-html field
 				jQuery( 'textarea#description' ).closest( '.form-field' ).remove();
@@ -120,7 +141,12 @@ class Editor {
 		?>
 		<div class="form-field term-description-wrap">
 			<label for="tag-description"><?php _e( 'Description' ); ?></label>
-			<?php wp_editor( '', 'html-tag-description', $settings ); ?>
+			<?php
+
+			wp_editor( '', 'html-tag-description', $settings );
+			$this->editor_word_count();
+
+			?>
 			<p><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></p>
 
 			<script type="text/javascript">

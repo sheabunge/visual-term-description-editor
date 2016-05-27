@@ -29,7 +29,7 @@ function plugin() {
 	static $plugin;
 
 	if ( is_null( $plugin ) ) {
-		$plugin = new Plugin();
+		$plugin = new Plugin( __FILE__ );
 	}
 
 	return $plugin;
