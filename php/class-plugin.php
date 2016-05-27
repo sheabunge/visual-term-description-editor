@@ -20,7 +20,7 @@ class Plugin {
 	 */
 	function run() {
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
-		add_action( 'admin_head-edit-tags.php', 'fix_visual_term_description_editor_style' );
+		add_action( 'admin_head-edit-tags.php', array( $this, 'fix_editor_style' ) );
 
 		/* Retrieve an array of registered taxonomies */
 		$taxonomies = get_taxonomies( '', 'names' );
@@ -37,7 +37,7 @@ class Plugin {
 	 *
 	 * @since 1.1
 	 */
-	function fix_visual_term_description_editor_style() {
+	function fix_editor_style() {
 		echo '<style>.quicktags-toolbar input { width: auto; }</style>';
 	}
 
