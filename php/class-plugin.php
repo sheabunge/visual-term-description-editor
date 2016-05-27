@@ -35,6 +35,8 @@ class Plugin {
 	function run() {
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 		add_action( 'admin_head-edit-tags.php', array( $this, 'fix_editor_style' ) );
+		add_action( 'admin_head-edit-tags.php', array( $this, 'load_wordcount_js' ) );
+		add_action( 'admin_head-term.php', array( $this, 'load_wordcount_js' ) );
 
 		/* Retrieve an array of registered taxonomies */
 		$taxonomies = get_taxonomies( '', 'names' );
@@ -52,14 +54,18 @@ class Plugin {
 	 * @since 1.1
 	 */
 	function fix_editor_style() {
+		echo '<style>.quicktags-toolbar input { width: auto; }</style>';
+	}
 
+	/**
+	 * Load the script for the word count functionality
+	 */
+	function load_wordcount_js() {
 		wp_enqueue_script(
 			'vtde-word-count',
 			plugins_url( 'js/wordcount.js', plugin()->file ),
 			array( 'jquery', 'word-count' )
 		);
-
-		echo '<style>.quicktags-toolbar input { width: auto; }</style>';
 	}
 
 	/**

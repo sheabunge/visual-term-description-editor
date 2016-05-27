@@ -75,7 +75,7 @@ class Editor {
 
 		?>
 		<div id="post-status-info">
-			<div id="description-word-count" class="hide-if-no-js">
+			<div id="description-word-count" class="hide-if-no-js" style="padding: 5px 10px;">
 				<?php printf(
 					__( 'Word count: %s' ),
 					'<span class="word-count">0</span>'
@@ -108,7 +108,7 @@ class Editor {
 			<td>
 				<?php
 
-				wp_editor( htmlspecialchars_decode( $tag->description ), 'html-description', $settings );
+				wp_editor( htmlspecialchars_decode( $tag->description ), 'html-tag-description', $settings );
 				$this->editor_word_count();
 
 				?>

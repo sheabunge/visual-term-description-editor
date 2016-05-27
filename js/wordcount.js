@@ -21,7 +21,6 @@
 
             if ( count !== prevCount ) {
                 $count.text( count );
-                console.log(count);
             }
 
             prevCount = count;
@@ -33,7 +32,6 @@
             }
 
             contentEditor = editor;
-            console.log(editor);
 
             editor.on( 'nodechange keyup', _.debounce( update, 1000 ) );
         } );
