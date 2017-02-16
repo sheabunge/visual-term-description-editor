@@ -3,8 +3,8 @@ Contributors: bungeshea
 Donate link: http://bungeshea.com/donate/
 Tags: tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
-Tested up to: 4.5.2
-Stable tag: 1.5.0
+Tested up to: 4.7.2
+Stable tag: 1.6.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -31,6 +31,10 @@ This plugin's code is [available on GitHub](https://github.com/sheabunge/visual-
 3. Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)
 
 == Changelog ==
+
+= 1.6.0 =
+* Disabled evaluation of shortcodes in the administration area
+* Constrained image widths in description administration column
 
 = 1.5.0 =
 * Fixed action hooked to wrong method
