@@ -61,8 +61,11 @@ class Editor {
 		add_filter( 'term_description', 'convert_smilies' );
 		add_filter( 'term_description', 'convert_chars' );
 		add_filter( 'term_description', 'wpautop' );
-		add_filter( 'term_description', 'shortcode_unautop' );
-		add_filter( 'term_description', 'do_shortcode', 11);
+
+		if ( ! is_admin() ) {
+			add_filter( 'term_description', 'shortcode_unautop' );
+			add_filter( 'term_description', 'do_shortcode', 11 );
+		}
 
 		/* Loop through the taxonomies, adding actions */
 		foreach ( $this->taxonomies as $taxonomy ) {
@@ -74,14 +77,14 @@ class Editor {
 	private function editor_word_count() {
 
 		?>
-		<div id="post-status-info">
-			<div id="description-word-count" class="hide-if-no-js" style="padding: 5px 10px;">
+        <div id="post-status-info">
+            <div id="description-word-count" class="hide-if-no-js" style="padding: 5px 10px;">
 				<?php printf(
 					__( 'Word count: %s' ),
 					'<span class="word-count">0</span>'
 				); ?>
-			</div>
-		</div>
+            </div>
+        </div>
 		<?php
 	}
 
@@ -92,7 +95,7 @@ class Editor {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $tag      The tag currently being edited
+	 * @param object $tag The tag currently being edited
 	 * @param string $taxonomy The taxonomy that the tag belongs to
 	 */
 	public function render_field_edit( $tag, $taxonomy ) {
@@ -103,22 +106,22 @@ class Editor {
 		);
 
 		?>
-		<tr class="form-field term-description-wrap">
-			<th scope="row"><label for="description"><?php _e( 'Description' ); ?></label></th>
-			<td>
+        <tr class="form-field term-description-wrap">
+            <th scope="row"><label for="description"><?php _e( 'Description' ); ?></label></th>
+            <td>
 				<?php
 
 				wp_editor( htmlspecialchars_decode( $tag->description ), 'html-tag-description', $settings );
 				$this->editor_word_count();
 
 				?>
-				<p class="description"><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></p>
-			</td>
-			<script type="text/javascript">
-				// Remove the non-html field
-				jQuery( 'textarea#description' ).closest( '.form-field' ).remove();
-			</script>
-		</tr>
+                <p class="description"><?php _e( 'The description is not prominent by default; however, some themes may show it.' ); ?></p>
+            </td>
+            <script type="text/javascript">
+                // Remove the non-html field
+                jQuery('textarea#description').closest('.form-field').remove();
+            </script>
+        </tr>
 		<?php
 	}
 
@@ -139,31 +142,29 @@ class Editor {
 		);
 
 		?>
-		<div class="form-field term-description-wrap">
-			<label for="tag-description"><?php _e( 'Description' ); ?></label>
+        <div class="form-field term-description-wrap">
+            <label for="tag-description"><?php _e( 'Description' ); ?></label>
 			<?php
 
 			wp_editor( '', 'html-tag-description', $settings );
 			$this->editor_word_count();
 
 			?>
-			<p><?php _e('The description is not prominent by default; however, some themes may show it.'); ?></p>
+            <p><?php _e( 'The description is not prominent by default; however, some themes may show it.' ); ?></p>
 
-			<script type="text/javascript">
-				// Remove the non-html field
-				jQuery( 'textarea#tag-description' ).closest( '.form-field' ).remove();
+            <script type="text/javascript">
+                // Remove the non-html field
+                jQuery('textarea#tag-description').closest('.form-field').remove();
 
-				jQuery(function() {
-					// Trigger save
-					jQuery( '#addtag' ).on( 'mousedown', '#submit', function() {
-						tinyMCE.triggerSave();
-					});
-				});
+                jQuery(function () {
+                    // Trigger save
+                    jQuery('#addtag').on('mousedown', '#submit', function () {
+                        tinyMCE.triggerSave();
+                    });
+                });
 
-			</script>
-		</div>
+            </script>
+        </div>
 		<?php
 	}
-
 }
-
