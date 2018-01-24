@@ -1,7 +1,7 @@
 === Visual Term Description Editor ===
 Contributors: bungeshea
 Donate link: http://bungeshea.com/donate/
-Tags: tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
+Tags: HTML Markup, tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
 Tested up to: 4.9.2
 Stable tag: 1.7.0
@@ -12,7 +12,7 @@ Replaces the plain-text category and tag description editor with a visual editor
 
 == Description ==
 
-Replaces the term description editor with the WordPress TinyMCE visual editor, allowing you to use HTML in term descriptions and write them in rich text. Works on all taxonomies, including tags, categories and link categories, as well as custom taxonomies.
+Empowers Better HTML Markup using WordPress's TinyMCE Visual Editor for H1, H2, H3..., Media Uploads, Links, Text Formatting, and proper HTML Markup on WooCommerce Product Cateogory, WordPress's Post Category, Tag Taxonomies, and more. (Yes, you need proper HTML Markup on all WooCommerce Product Category pages!) Not only WooCommerce post, but this does also very effectively work on all taxonomies, including tags, categories and link categories, as well as custom taxonomies.
 
 This plugin is multisite-compatible; if you would like to use it on every blog, network activate the plugin from the network dashboard. Otherwise, activate the plugin for individual sites.
 
