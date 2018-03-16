@@ -20,9 +20,16 @@ This plugin's code is [available on GitHub](https://github.com/sheabunge/visual-
 
 == Installation ==
 
-1. Upload `visual-term-description-editor.php` to the `/wp-content/plugins/` directory
+= Simple Installation =
+
+1. Search for 'Visual Term Description Editor' in the 'Plugins > Add New' menu and click 'Install'
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Done!
+
+= Manual Installation =
+
+1. Download the [latest version of the plugin](https://downloads.wordpress.org/plugin/visual-term-description-editor.zip)
+2. Upload the `visual-term-description-editor` directory to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Screenshots ==
 

@@ -11,9 +11,24 @@ This plugin is multisite-compatible; if you would like to use it on every blog, 
 
 ## Installation
 
-1. Upload `visual-term-description-editor.php` to the `/wp-content/plugins/` directory
+### Simple Installation
+
+1. Search for 'Visual Term Description Editor' in the 'Plugins > Add New' menu and click 'Install'
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Done!
+
+### Manual Installation
+
+1. Download the [latest version of the plugin from WordPress.org](https://downloads.wordpress.org/plugin/visual-term-description-editor.zip)
+2. Upload the `visual-term-description-editor` directory to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
+
+
+### Development Installation
+
+1. Clone this GitHub repository locally or download a zip of the [latest release](https://github.com/sheabunge/visual-term-description-editor/releases)
+2. Move the plugin directory to the `/wp-content/plugins/` directory
+3. Install [Composer](http://getcomposer.org/) if not already installed and run `composer install` within the plugin directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Screenshots
 
