@@ -54,7 +54,11 @@ class Plugin {
 	 * @since 1.1
 	 */
 	function fix_editor_style() {
-		echo '<style>.quicktags-toolbar input { width: auto; } .column-description img { max-width: 100%; }</style>';
+		echo '<style>',
+			' .quicktags-toolbar input { width: auto; }',
+			' .column-description img { max-width: 100%; }',
+			' .term-description-wrap #post-status-info { width: auto; }',
+			' </style>';
 	}
 
 	/**
