@@ -8,7 +8,7 @@
  * Author URI:  https://bungeshea.com
  * License:     MIT
  * License URI: https://opensource.com/licences/MIT
- * Version:     1.7.0
+ * Version:     1.8.0
  * Text Domain: visual-term-description-editor
  * Domain Path: /languages
  */

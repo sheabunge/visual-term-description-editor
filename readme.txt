@@ -5,7 +5,7 @@ Tags: HTML Markup, tags, categories, terms, visual, TinyMCE, description, editor
 Requires at least: 3.3
 Tested up to: 4.9.2
 Requires PHP: 5.3
-Stable tag: 1.7.0
+Stable tag: 1.8.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -39,6 +39,10 @@ This plugin's code is [available on GitHub](https://github.com/sheabunge/visual-
 3. Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)
 
 == Changelog ==
+
+= 1.8.0 =
+* Fixed: prevent description from persisting in editor field after adding a new term [[#](https://wordpress.org/support/topic/description-content-remains-after-adding-new-term-in-visual-mode/)]
+* Fixed: always load underscore as a dependency of the word count script
 
 = 1.7.0 =
 * Added compatibility with qTranslate-X
