@@ -118,7 +118,7 @@ class Editor {
 				?>
 				<p class="description"><?php _e( 'The description is not prominent by default; however, some themes may show it.' ); ?></p>
 			</td>
-			<script type="text/javascript">
+			<script>
 				// Remove the non-html field
 				jQuery('textarea#description').closest('.form-field').remove();
 			</script>
@@ -154,17 +154,20 @@ class Editor {
 			?>
 			<p><?php _e( 'The description is not prominent by default; however, some themes may show it.' ); ?></p>
 
-			<script type="text/javascript">
+			<script>
 				// Remove the non-html field
 				jQuery('textarea#tag-description').closest('.form-field').remove();
 
 				jQuery(function () {
-					// Trigger save
 					jQuery('#addtag').on('mousedown', '#submit', function () {
 						tinyMCE.triggerSave();
+
+						jQuery(document).bind('ajaxSuccess.vtde_add_term', function () {
+							tinyMCE.activeEditor.setContent('');
+							jQuery(document).unbind('ajaxSuccess.vtde_add_term', false);
+						});
 					});
 				});
-
 			</script>
 		</div>
 		<?php
