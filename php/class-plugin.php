@@ -68,7 +68,7 @@ class Plugin {
 		wp_enqueue_script(
 			'vtde-word-count',
 			plugins_url( 'js/wordcount.js', plugin()->file ),
-			array( 'jquery', 'word-count' )
+			array( 'jquery', 'underscore', 'word-count' )
 		);
 	}
 
