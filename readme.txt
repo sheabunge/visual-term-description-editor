@@ -7,7 +7,7 @@ Tested up to: 4.9.2
 Requires PHP: 5.3
 Stable tag: 1.8.0
 License: MIT
-License URI: http://opensource.org/licenses/MIT
+License URI: https://opensource.org/licenses/MIT
 
 Replaces the plain-text category and tag description editor with a visual editor.
 
