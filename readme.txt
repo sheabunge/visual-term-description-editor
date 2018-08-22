@@ -1,6 +1,6 @@
 === Visual Term Description Editor ===
 Contributors: bungeshea
-Donate link: http://bungeshea.com/donate/
+Donate link: https://bungeshea.com/donate/
 Tags: HTML Markup, tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
 Tested up to: 4.9.2
