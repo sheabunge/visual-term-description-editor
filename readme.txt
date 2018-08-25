@@ -1,13 +1,13 @@
 === Visual Term Description Editor ===
 Contributors: bungeshea
-Donate link: http://bungeshea.com/donate/
+Donate link: https://bungeshea.com/donate/
 Tags: HTML Markup, tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
 Tested up to: 4.9.2
 Requires PHP: 5.3
 Stable tag: 1.8.0
 License: MIT
-License URI: http://opensource.org/licenses/MIT
+License URI: https://opensource.org/licenses/MIT
 
 Replaces the plain-text category and tag description editor with a visual editor.
 
