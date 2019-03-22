@@ -10,7 +10,7 @@ namespace VTDE;
 class Editor {
 
 	/**
-	 * The taxonomies which should use the visual editor
+	 * The taxonomies which should use the visual editor.
 	 *
 	 * @var array
 	 * @since 1.0
@@ -18,11 +18,11 @@ class Editor {
 	public $taxonomies;
 
 	/**
-	 * The constructor function for the class
+	 * The constructor function for the class.
 	 *
 	 * @since 1.0
 	 *
-	 * @param array $taxonomies The taxonomies which should use a visual editor
+	 * @param array $taxonomies The taxonomies which should use a visual editor.
 	 */
 	public function __construct( array $taxonomies ) {
 
@@ -31,7 +31,7 @@ class Editor {
 	}
 
 	/**
-	 * Register actions and filters
+	 * Register actions and filters.
 	 *
 	 * @since 1.4.0
 	 */
@@ -80,7 +80,7 @@ class Editor {
 		<div id="post-status-info">
 			<div id="description-word-count" class="hide-if-no-js" style="padding: 5px 10px;">
 				<?php printf(
-					__( 'Word count: %s' ),
+					esc_html__( 'Word count: %s' ),
 					'<span class="word-count">0</span>'
 				); ?>
 			</div>
@@ -116,7 +116,7 @@ class Editor {
 				$this->editor_word_count();
 
 				?>
-				<p class="description"><?php _e( 'The description is not prominent by default; however, some themes may show it.' ); ?></p>
+				<p class="description"><?php esc_html_e( 'The description is not prominent by default; however, some themes may show it.' ); ?></p>
 			</td>
 			<script>
 				// Remove the non-html field
@@ -145,14 +145,14 @@ class Editor {
 
 		?>
 		<div class="form-field term-description-wrap">
-			<label for="tag-description"><?php _e( 'Description' ); ?></label>
+			<label for="tag-description"><?php esc_html_e( 'Description' ); ?></label>
 			<?php
 
 			wp_editor( '', 'html-tag-description', $settings );
 			$this->editor_word_count();
 
 			?>
-			<p><?php _e( 'The description is not prominent by default; however, some themes may show it.' ); ?></p>
+			<p><?php esc_html_e( 'The description is not prominent by default; however, some themes may show it.' ); ?></p>
 
 			<script>
 				// Remove the non-html field
