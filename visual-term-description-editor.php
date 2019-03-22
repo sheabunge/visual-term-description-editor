@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Visual Term Description Editor
  * Plugin URI:  https://github.com/sheabunge/visual-term-description-editor
@@ -8,7 +7,7 @@
  * Author URI:  https://bungeshea.com
  * License:     MIT
  * License URI: https://opensource.com/licences/MIT
- * Version:     1.8.0
+ * Version:     1.8.1
  * Text Domain: visual-term-description-editor
  * Domain Path: /languages
  */

@@ -3,9 +3,9 @@ Contributors: bungeshea
 Donate link: https://sheabunge.com/donate/
 Tags: HTML Markup, tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
-Tested up to: 5.0
+Tested up to: 5.1.1
 Requires PHP: 5.3
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -39,6 +39,9 @@ This plugin's code is [available on GitHub](https://github.com/sheabunge/visual-
 3. Viewing a tag archive page with the formatted tag description (using the Twenty Fourteen theme)
 
 == Changelog ==
+
+= 1.8.1 =
+* Prevented console error when trying to clear editor content.
 
 = 1.8.0 =
 * Fixed: prevent description from persisting in editor field after adding a new term [[#](https://wordpress.org/support/topic/description-content-remains-after-adding-new-term-in-visual-mode/)]
