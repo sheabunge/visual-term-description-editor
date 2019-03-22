@@ -163,7 +163,9 @@ class Editor {
 						tinyMCE.triggerSave();
 
 						jQuery(document).bind('ajaxSuccess.vtde_add_term', function () {
-							tinyMCE.activeEditor.setContent('');
+							if (tinyMCE.activeEditor) {
+								tinyMCE.activeEditor.setContent('');
+							}
 							jQuery(document).unbind('ajaxSuccess.vtde_add_term', false);
 						});
 					});
