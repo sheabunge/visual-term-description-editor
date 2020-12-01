@@ -3,7 +3,7 @@
 namespace VTDE;
 
 /**
- * Implement a visual editor for term descriptions
+ * Implement a visual editor for term descriptions.
  *
  * @since 1.0
  */
@@ -20,9 +20,10 @@ class Editor {
 	/**
 	 * The constructor function for the class.
 	 *
+	 * @param array $taxonomies The taxonomies which should use a visual editor.
+	 *
 	 * @since 1.0
 	 *
-	 * @param array $taxonomies The taxonomies which should use a visual editor.
 	 */
 	public function __construct( array $taxonomies ) {
 
@@ -74,8 +75,10 @@ class Editor {
 		}
 	}
 
+	/**
+	 * Render the editor word count section.
+	 */
 	private function editor_word_count() {
-
 		?>
 		<div id="post-status-info">
 			<div id="description-word-count" class="hide-if-no-js" style="padding: 5px 10px;">
@@ -89,14 +92,14 @@ class Editor {
 	}
 
 	/**
-	 * Add the visual editor to the edit tag screen
+	 * Add the visual editor to the edit tag screen.
 	 *
 	 * HTML should match what is used in wp-admin/edit-tag-form.php
 	 *
-	 * @since 1.0
+	 * @param object $tag      The tag currently being edited.
+	 * @param string $taxonomy The taxonomy that the tag belongs to.
 	 *
-	 * @param object $tag The tag currently being edited
-	 * @param string $taxonomy The taxonomy that the tag belongs to
+	 * @since 1.0
 	 */
 	public function render_field_edit( $tag, $taxonomy ) {
 
@@ -108,7 +111,9 @@ class Editor {
 
 		?>
 		<tr class="form-field term-description-wrap">
-			<th scope="row"><label for="description"><?php _e( 'Description' ); ?></label></th>
+			<th scope="row">
+				<label for="description"><?php _e( 'Description' ); ?></label>
+			</th>
 			<td>
 				<?php
 
@@ -127,13 +132,13 @@ class Editor {
 	}
 
 	/**
-	 * Add the visual editor to the add new tag screen
+	 * Add the visual editor to the add new tag screen.
 	 *
 	 * HTML should match what is used in wp-admin/edit-tags.php
 	 *
-	 * @since 1.0
+	 * @param string $taxonomy The taxonomy that a new tag is being added to.
 	 *
-	 * @param string $taxonomy The taxonomy that a new tag is being added to
+	 * @since 1.0
 	 */
 	public function render_field_add( $taxonomy ) {
 

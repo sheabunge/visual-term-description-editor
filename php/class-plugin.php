@@ -3,7 +3,7 @@
 namespace VTDE;
 
 /**
- * Base plugin class
+ * Base plugin class.
  * @package VTDE
  */
 class Plugin {
@@ -28,7 +28,7 @@ class Plugin {
 	}
 
 	/**
-	 * Instantiates the class to work on all of the registered taxonomies
+	 * Instantiates the class to work on all of the registered taxonomies.
 	 *
 	 * @since 1.0
 	 */
@@ -48,8 +48,7 @@ class Plugin {
 	}
 
 	/**
-	 * Fix the formatting buttons on the HTML section of
-	 * the visual editor from being full-width
+	 * Fix the formatting buttons on the HTML section of the visual editor from being full-width.
 	 *
 	 * @since 1.1
 	 */
@@ -62,7 +61,7 @@ class Plugin {
 	}
 
 	/**
-	 * Load the script for the word count functionality
+	 * Load the script for the word count functionality.
 	 */
 	function load_wordcount_js() {
 		wp_enqueue_script(
@@ -73,7 +72,7 @@ class Plugin {
 	}
 
 	/**
-	 * Load up the localization file if we're using WordPress in a different language
+	 * Load up the localization file if we're using WordPress in a different language.
 	 */
 	public function load_textdomain() {
 		$domain = 'visual-term-description-editor';
