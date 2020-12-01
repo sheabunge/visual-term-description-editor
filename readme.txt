@@ -3,7 +3,7 @@ Contributors: bungeshea
 Donate link: https://sheabunge.com/donate/
 Tags: HTML Markup, tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
 Requires at least: 3.3
-Tested up to: 5.1.1
+Tested up to: 5.6
 Requires PHP: 5.3
 Stable tag: 1.8.1
 License: MIT
