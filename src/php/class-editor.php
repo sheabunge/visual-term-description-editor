@@ -108,6 +108,13 @@ class Editor {
 			'textarea_rows' => 10,
 			'editor_class'  => 'i18n-multilingual',
 		);
+		
+		/**
+		 * Allow filtering of wp_editor screen settings
+		 * 
+		 * @param array $settings Array of settings
+		 */
+		$settings = apply_filters( 'visual_term_description_edit_screen_editor_settings', $settings );
 
 		?>
 		<tr class="form-field term-description-wrap">
@@ -147,6 +154,13 @@ class Editor {
 			'textarea_rows' => 7,
 			'editor_class'  => 'i18n-multilingual',
 		);
+		
+		/**
+		 * Allow filtering of wp_editor screen settings
+		 * 
+		 * @param array $settings Array of settings
+		 */
+		$settings = apply_filters( 'visual_term_description_editor_settings', $settings );
 
 		?>
 		<div class="form-field term-description-wrap">
