@@ -27,7 +27,7 @@ class Editor {
 	 */
 	public function __construct( array $taxonomies ) {
 
-		/* Setup the class variables */
+		/* Set up the class variables */
 		$this->taxonomies = $taxonomies;
 	}
 
@@ -71,7 +71,7 @@ class Editor {
 		/* Loop through the taxonomies, adding actions */
 		foreach ( $this->taxonomies as $taxonomy ) {
 			add_action( $taxonomy . '_edit_form_fields', array( $this, 'render_field_edit' ), 1, 2 );
-			add_action( $taxonomy . '_add_form_fields', array( $this, 'render_field_add' ), 1, 1 );
+			add_action( $taxonomy . '_add_form_fields', array( $this, 'render_field_add' ), 1, 0 );
 		}
 	}
 
@@ -108,10 +108,10 @@ class Editor {
 			'textarea_rows' => 10,
 			'editor_class'  => 'i18n-multilingual',
 		);
-		
+
 		/**
 		 * Allow filtering of wp_editor screen settings
-		 * 
+		 *
 		 * @param array $settings Array of settings
 		 */
 		$settings = apply_filters( 'visual_term_description_edit_screen_editor_settings', $settings );
@@ -132,7 +132,7 @@ class Editor {
 			</td>
 			<script>
 				// Remove the non-html field
-				jQuery('textarea#description').closest('.form-field').remove();
+				jQuery('textarea#description').closest('.form-field').remove()
 			</script>
 		</tr>
 		<?php
@@ -143,21 +143,19 @@ class Editor {
 	 *
 	 * HTML should match what is used in wp-admin/edit-tags.php
 	 *
-	 * @param string $taxonomy The taxonomy that a new tag is being added to.
-	 *
 	 * @since 1.0
 	 */
-	public function render_field_add( $taxonomy ) {
+	public function render_field_add() {
 
 		$settings = array(
 			'textarea_name' => 'description',
 			'textarea_rows' => 7,
 			'editor_class'  => 'i18n-multilingual',
 		);
-		
+
 		/**
 		 * Allow filtering of wp_editor screen settings
-		 * 
+		 *
 		 * @param array $settings Array of settings
 		 */
 		$settings = apply_filters( 'visual_term_description_editor_settings', $settings );
@@ -175,20 +173,20 @@ class Editor {
 
 			<script>
 				// Remove the non-html field
-				jQuery('textarea#tag-description').closest('.form-field').remove();
+				jQuery('textarea#tag-description').closest('.form-field').remove()
 
 				jQuery(function () {
 					jQuery('#addtag').on('mousedown', '#submit', function () {
-						tinyMCE.triggerSave();
+						tinyMCE.triggerSave()
 
 						jQuery(document).bind('ajaxSuccess.vtde_add_term', function () {
 							if (tinyMCE.activeEditor) {
-								tinyMCE.activeEditor.setContent('');
+								tinyMCE.activeEditor.setContent('')
 							}
-							jQuery(document).unbind('ajaxSuccess.vtde_add_term', false);
-						});
-					});
-				});
+							jQuery(document).unbind('ajaxSuccess.vtde_add_term', false)
+						})
+					})
+				})
 			</script>
 		</div>
 		<?php

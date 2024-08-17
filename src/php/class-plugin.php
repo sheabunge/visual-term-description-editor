@@ -28,7 +28,7 @@ class Plugin {
 	}
 
 	/**
-	 * Instantiates the class to work on all of the registered taxonomies.
+	 * Instantiates the class to work on all the registered taxonomies.
 	 *
 	 * @since 1.0
 	 */

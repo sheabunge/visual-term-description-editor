@@ -1,9 +1,9 @@
 === Visual Term Description Editor ===
 Contributors: bungeshea
 Donate link: https://sheabunge.com/donate/
-Tags: HTML Markup, tags, categories, terms, visual, TinyMCE, description, editor, rich text, wysiwyg, wpeditor
+Tags: tags, categories, TinyMCE, rich text, wysiwyg
 Requires at least: 3.3
-Tested up to: 5.8.2
+Tested up to: 6.6.1
 Requires PHP: 5.4
 Stable tag: 1.8.1
 License: MIT
