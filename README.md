@@ -1,7 +1,7 @@
 # Visual Term Description Editor
 
 * __Requires at least:__ WordPress 3.3 or later
-* __Tested up to:__ WordPress 5.8.2
+* __Tested up to:__ WordPress 6.1.1
 * __Stable version:__ 1.8.1
 * __License:__ [MIT](https://opensource.org/licenses/MIT)
 
